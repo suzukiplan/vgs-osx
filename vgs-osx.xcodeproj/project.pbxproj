@@ -13,6 +13,7 @@
 		745C83C4200364280003553A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745C83C2200364280003553A /* Main.storyboard */; };
 		745C83C7200364280003553A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 745C83C6200364280003553A /* main.m */; };
 		745C83D6200365AD0003553A /* vgscpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83D3200365AC0003553A /* vgscpu.c */; };
+		745C83DB2003664E0003553A /* vgsspu_al.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83D92003664E0003553A /* vgsspu_al.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		745C83D3200365AC0003553A /* vgscpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vgscpu.c; path = "vgs-cpu/src/cpu/vgscpu.c"; sourceTree = SOURCE_ROOT; };
 		745C83D4200365AC0003553A /* vgscpu_op.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgscpu_op.h; path = "vgs-cpu/src/cpu/vgscpu_op.h"; sourceTree = SOURCE_ROOT; };
 		745C83D5200365AD0003553A /* vgscpu_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgscpu_internal.h; path = "vgs-cpu/src/cpu/vgscpu_internal.h"; sourceTree = SOURCE_ROOT; };
+		745C83D92003664E0003553A /* vgsspu_al.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vgsspu_al.c; path = "vgs-spu/src/vgsspu_al.c"; sourceTree = SOURCE_ROOT; };
+		745C83DA2003664E0003553A /* vgsspu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgsspu.h; path = "vgs-spu/src/vgsspu.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 		745C83B9200364270003553A /* vgs-osx */ = {
 			isa = PBXGroup;
 			children = (
+				745C83D8200366250003553A /* spu */,
 				745C83CE200365520003553A /* cpu */,
 				745C83BA200364270003553A /* AppDelegate.h */,
 				745C83BB200364270003553A /* AppDelegate.m */,
@@ -91,6 +95,15 @@
 				745C83CF200365AC0003553A /* vgscpu.h */,
 			);
 			path = cpu;
+			sourceTree = "<group>";
+		};
+		745C83D8200366250003553A /* spu */ = {
+			isa = PBXGroup;
+			children = (
+				745C83D92003664E0003553A /* vgsspu_al.c */,
+				745C83DA2003664E0003553A /* vgsspu.h */,
+			);
+			path = spu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				745C83BF200364280003553A /* ViewController.m in Sources */,
+				745C83DB2003664E0003553A /* vgsspu_al.c in Sources */,
 				745C83D6200365AD0003553A /* vgscpu.c in Sources */,
 				745C83C7200364280003553A /* main.m in Sources */,
 				745C83BC200364270003553A /* AppDelegate.m in Sources */,
