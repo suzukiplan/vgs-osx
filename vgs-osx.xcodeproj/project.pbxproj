@@ -14,6 +14,10 @@
 		745C83C7200364280003553A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 745C83C6200364280003553A /* main.m */; };
 		745C83D6200365AD0003553A /* vgscpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83D3200365AC0003553A /* vgscpu.c */; };
 		745C83DB2003664E0003553A /* vgsspu_al.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83D92003664E0003553A /* vgsspu_al.c */; };
+		745C83E5200366E50003553A /* vgs2tone.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83DD200366E50003553A /* vgs2tone.c */; };
+		745C83E6200366E50003553A /* vgsdec.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83DF200366E50003553A /* vgsdec.c */; };
+		745C83E7200366E50003553A /* vgsdec.def in Resources */ = {isa = PBXBuildFile; fileRef = 745C83E2200366E50003553A /* vgsdec.def */; };
+		745C83E8200366E50003553A /* miniz.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83E3200366E50003553A /* miniz.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,14 @@
 		745C83D5200365AD0003553A /* vgscpu_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgscpu_internal.h; path = "vgs-cpu/src/cpu/vgscpu_internal.h"; sourceTree = SOURCE_ROOT; };
 		745C83D92003664E0003553A /* vgsspu_al.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vgsspu_al.c; path = "vgs-spu/src/vgsspu_al.c"; sourceTree = SOURCE_ROOT; };
 		745C83DA2003664E0003553A /* vgsspu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgsspu.h; path = "vgs-spu/src/vgsspu.h"; sourceTree = SOURCE_ROOT; };
+		745C83DD200366E50003553A /* vgs2tone.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vgs2tone.c; path = "vgs-bgm-decoder/src/vgs2tone.c"; sourceTree = SOURCE_ROOT; };
+		745C83DE200366E50003553A /* vgsdec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgsdec.h; path = "vgs-bgm-decoder/src/vgsdec.h"; sourceTree = SOURCE_ROOT; };
+		745C83DF200366E50003553A /* vgsdec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vgsdec.c; path = "vgs-bgm-decoder/src/vgsdec.c"; sourceTree = SOURCE_ROOT; };
+		745C83E0200366E50003553A /* vgsdec_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgsdec_internal.h; path = "vgs-bgm-decoder/src/vgsdec_internal.h"; sourceTree = SOURCE_ROOT; };
+		745C83E1200366E50003553A /* vgstone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgstone.h; path = "vgs-bgm-decoder/src/vgstone.h"; sourceTree = SOURCE_ROOT; };
+		745C83E2200366E50003553A /* vgsdec.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vgsdec.def; path = "vgs-bgm-decoder/src/vgsdec.def"; sourceTree = SOURCE_ROOT; };
+		745C83E3200366E50003553A /* miniz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = miniz.c; path = "vgs-bgm-decoder/src/miniz.c"; sourceTree = SOURCE_ROOT; };
+		745C83E4200366E50003553A /* miniz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = miniz.h; path = "vgs-bgm-decoder/src/miniz.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 		745C83B9200364270003553A /* vgs-osx */ = {
 			isa = PBXGroup;
 			children = (
+				745C83DC200366C00003553A /* decoder */,
 				745C83D8200366250003553A /* spu */,
 				745C83CE200365520003553A /* cpu */,
 				745C83BA200364270003553A /* AppDelegate.h */,
@@ -104,6 +117,21 @@
 				745C83DA2003664E0003553A /* vgsspu.h */,
 			);
 			path = spu;
+			sourceTree = "<group>";
+		};
+		745C83DC200366C00003553A /* decoder */ = {
+			isa = PBXGroup;
+			children = (
+				745C83E3200366E50003553A /* miniz.c */,
+				745C83E4200366E50003553A /* miniz.h */,
+				745C83DD200366E50003553A /* vgs2tone.c */,
+				745C83E0200366E50003553A /* vgsdec_internal.h */,
+				745C83DF200366E50003553A /* vgsdec.c */,
+				745C83E2200366E50003553A /* vgsdec.def */,
+				745C83DE200366E50003553A /* vgsdec.h */,
+				745C83E1200366E50003553A /* vgstone.h */,
+			);
+			path = decoder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				745C83C1200364280003553A /* Assets.xcassets in Resources */,
+				745C83E7200366E50003553A /* vgsdec.def in Resources */,
 				745C83C4200364280003553A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,8 +208,11 @@
 				745C83BF200364280003553A /* ViewController.m in Sources */,
 				745C83DB2003664E0003553A /* vgsspu_al.c in Sources */,
 				745C83D6200365AD0003553A /* vgscpu.c in Sources */,
+				745C83E5200366E50003553A /* vgs2tone.c in Sources */,
 				745C83C7200364280003553A /* main.m in Sources */,
+				745C83E6200366E50003553A /* vgsdec.c in Sources */,
 				745C83BC200364270003553A /* AppDelegate.m in Sources */,
+				745C83E8200366E50003553A /* miniz.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
