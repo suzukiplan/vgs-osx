@@ -12,6 +12,7 @@
 		745C83C1200364280003553A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 745C83C0200364280003553A /* Assets.xcassets */; };
 		745C83C4200364280003553A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745C83C2200364280003553A /* Main.storyboard */; };
 		745C83C7200364280003553A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 745C83C6200364280003553A /* main.m */; };
+		745C83D6200365AD0003553A /* vgscpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83D3200365AC0003553A /* vgscpu.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,13 @@
 		745C83C5200364280003553A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		745C83C6200364280003553A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		745C83C8200364280003553A /* vgs_osx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vgs_osx.entitlements; sourceTree = "<group>"; };
+		745C83CF200365AC0003553A /* vgscpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgscpu.h; path = "vgs-cpu/src/cpu/vgscpu.h"; sourceTree = SOURCE_ROOT; };
+		745C83D0200365AC0003553A /* vgscpu_op_acu_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgscpu_op_acu_c.h; path = "vgs-cpu/src/cpu/vgscpu_op_acu_c.h"; sourceTree = SOURCE_ROOT; };
+		745C83D1200365AC0003553A /* vgscpu_op_acu_d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgscpu_op_acu_d.h; path = "vgs-cpu/src/cpu/vgscpu_op_acu_d.h"; sourceTree = SOURCE_ROOT; };
+		745C83D2200365AC0003553A /* vgscpu_op_acu_b.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgscpu_op_acu_b.h; path = "vgs-cpu/src/cpu/vgscpu_op_acu_b.h"; sourceTree = SOURCE_ROOT; };
+		745C83D3200365AC0003553A /* vgscpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = vgscpu.c; path = "vgs-cpu/src/cpu/vgscpu.c"; sourceTree = SOURCE_ROOT; };
+		745C83D4200365AC0003553A /* vgscpu_op.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgscpu_op.h; path = "vgs-cpu/src/cpu/vgscpu_op.h"; sourceTree = SOURCE_ROOT; };
+		745C83D5200365AD0003553A /* vgscpu_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vgscpu_internal.h; path = "vgs-cpu/src/cpu/vgscpu_internal.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 		745C83B9200364270003553A /* vgs-osx */ = {
 			isa = PBXGroup;
 			children = (
+				745C83CE200365520003553A /* cpu */,
 				745C83BA200364270003553A /* AppDelegate.h */,
 				745C83BB200364270003553A /* AppDelegate.m */,
 				745C83BD200364280003553A /* ViewController.h */,
@@ -68,6 +77,20 @@
 				745C83C8200364280003553A /* vgs_osx.entitlements */,
 			);
 			path = "vgs-osx";
+			sourceTree = "<group>";
+		};
+		745C83CE200365520003553A /* cpu */ = {
+			isa = PBXGroup;
+			children = (
+				745C83D5200365AD0003553A /* vgscpu_internal.h */,
+				745C83D2200365AC0003553A /* vgscpu_op_acu_b.h */,
+				745C83D0200365AC0003553A /* vgscpu_op_acu_c.h */,
+				745C83D1200365AC0003553A /* vgscpu_op_acu_d.h */,
+				745C83D4200365AC0003553A /* vgscpu_op.h */,
+				745C83D3200365AC0003553A /* vgscpu.c */,
+				745C83CF200365AC0003553A /* vgscpu.h */,
+			);
+			path = cpu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				745C83BF200364280003553A /* ViewController.m in Sources */,
+				745C83D6200365AD0003553A /* vgscpu.c in Sources */,
 				745C83C7200364280003553A /* main.m in Sources */,
 				745C83BC200364270003553A /* AppDelegate.m in Sources */,
 			);
