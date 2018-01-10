@@ -19,6 +19,9 @@
 		745C83E7200366E50003553A /* vgsdec.def in Resources */ = {isa = PBXBuildFile; fileRef = 745C83E2200366E50003553A /* vgsdec.def */; };
 		745C83E8200366E50003553A /* miniz.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83E3200366E50003553A /* miniz.c */; };
 		745C83EC200521310003553A /* gamepad.c in Sources */ = {isa = PBXBuildFile; fileRef = 745C83EB200521310003553A /* gamepad.c */; };
+		745C83F12006610B0003553A /* VGSLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 745C83ED2006610B0003553A /* VGSLayer.m */; };
+		745C83F22006610B0003553A /* VGSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 745C83EF2006610B0003553A /* VGSView.m */; };
+		745C83F52006626A0003553A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 745C83F42006626A0003553A /* background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,11 @@
 		745C83E4200366E50003553A /* miniz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = miniz.h; path = "vgs-bgm-decoder/src/miniz.h"; sourceTree = SOURCE_ROOT; };
 		745C83EA200521310003553A /* gamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gamepad.h; path = "gamepad-osx/gamepad.h"; sourceTree = SOURCE_ROOT; };
 		745C83EB200521310003553A /* gamepad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gamepad.c; path = "gamepad-osx/gamepad.c"; sourceTree = SOURCE_ROOT; };
+		745C83ED2006610B0003553A /* VGSLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGSLayer.m; sourceTree = "<group>"; };
+		745C83EE2006610B0003553A /* VGSLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGSLayer.h; sourceTree = "<group>"; };
+		745C83EF2006610B0003553A /* VGSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGSView.m; sourceTree = "<group>"; };
+		745C83F02006610B0003553A /* VGSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGSView.h; sourceTree = "<group>"; };
+		745C83F42006626A0003553A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 		745C83B9200364270003553A /* vgs-osx */ = {
 			isa = PBXGroup;
 			children = (
+				745C83F32006625A0003553A /* asset */,
 				745C83E92005211C0003553A /* pad */,
 				745C83DC200366C00003553A /* decoder */,
 				745C83D8200366250003553A /* spu */,
@@ -91,6 +100,10 @@
 				745C83BB200364270003553A /* AppDelegate.m */,
 				745C83BD200364280003553A /* ViewController.h */,
 				745C83BE200364280003553A /* ViewController.m */,
+				745C83EE2006610B0003553A /* VGSLayer.h */,
+				745C83ED2006610B0003553A /* VGSLayer.m */,
+				745C83F02006610B0003553A /* VGSView.h */,
+				745C83EF2006610B0003553A /* VGSView.m */,
 				745C83C0200364280003553A /* Assets.xcassets */,
 				745C83C2200364280003553A /* Main.storyboard */,
 				745C83C5200364280003553A /* Info.plist */,
@@ -145,6 +158,14 @@
 				745C83EA200521310003553A /* gamepad.h */,
 			);
 			path = pad;
+			sourceTree = "<group>";
+		};
+		745C83F32006625A0003553A /* asset */ = {
+			isa = PBXGroup;
+			children = (
+				745C83F42006626A0003553A /* background.png */,
+			);
+			path = asset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				745C83C1200364280003553A /* Assets.xcassets in Resources */,
+				745C83F52006626A0003553A /* background.png in Resources */,
 				745C83E7200366E50003553A /* vgsdec.def in Resources */,
 				745C83C4200364280003553A /* Main.storyboard in Resources */,
 			);
@@ -218,10 +240,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745C83F22006610B0003553A /* VGSView.m in Sources */,
 				745C83BF200364280003553A /* ViewController.m in Sources */,
 				745C83EC200521310003553A /* gamepad.c in Sources */,
 				745C83DB2003664E0003553A /* vgsspu_al.c in Sources */,
 				745C83D6200365AD0003553A /* vgscpu.c in Sources */,
+				745C83F12006610B0003553A /* VGSLayer.m in Sources */,
 				745C83E5200366E50003553A /* vgs2tone.c in Sources */,
 				745C83C7200364280003553A /* main.m in Sources */,
 				745C83E6200366E50003553A /* vgsdec.c in Sources */,

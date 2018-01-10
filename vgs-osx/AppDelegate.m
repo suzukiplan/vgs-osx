@@ -1,27 +1,49 @@
-//
-//  AppDelegate.m
-//  vgs-osx
-//
-//  Created by Yoji Suzuki on 2018/01/08.
-//  Copyright © 2018年 SUZUKI PLAN. All rights reserved.
-//
-
+#import <IOKit/pwr_mgt/IOPMLib.h>
 #import "AppDelegate.h"
+#import "gamepad.h"
 
-@interface AppDelegate ()
-
-@end
+//extern void *_gamepad;
+static IOPMAssertionID assertionID;
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification
+{
 }
 
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
 }
 
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+    // TODO: call terminate procedure of VGS
+    // TODO: destroy game pad
+    /*
+    if (_gamepad) {
+        gamepad_term(_gamepad);
+        _gamepad = NULL;
+    }
+     */
+}
+
+// exit app when closed
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
+{
+    return YES;
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification
+{
+    IOPMAssertionCreateWithName(kIOPMAssertionTypeNoDisplaySleep, kIOPMAssertionLevelOn, CFSTR("playing game"), &assertionID);
+    // TODO: set enable input
+}
+
+- (void)applicationDidResignActive:(NSNotification *)notification
+{
+    // TODO: set disable input
+    IOPMAssertionRelease(assertionID);
+}
 
 @end
+
