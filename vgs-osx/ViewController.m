@@ -68,31 +68,13 @@ int vgsint_init(const char *bin);
 
 - (void)startLoadRomDialog
 {
-    int i; // Loop counter.
-    
-    // Create the File Open Dialog class.
     NSOpenPanel* openDlg = [NSOpenPanel openPanel];
-    
-    // Enable the selection of files in the dialog.
     [openDlg setCanChooseFiles:YES];
-    
-    // Enable the selection of directories in the dialog.
+    [openDlg setAllowsMultipleSelection:NO];
     [openDlg setCanChooseDirectories:YES];
-    
-    // Display the dialog.  If the OK button was pressed,
-    // process the files.
-    if ( [openDlg runModalForDirectory:nil file:nil] == NSOKButton )
-    {
-        // Get an array containing the full filenames of all
-        // files and directories selected.
+    if ( [openDlg runModalForDirectory:nil file:nil] == NSOKButton ) {
         NSArray* files = [openDlg filenames];
-        
-        // Loop through all the files and process them.
-        for( i = 0; i < [files count]; i++ )
-        {
-            NSString* fileName = [files objectAtIndex:i];
-            // TODO: open rom file
-        }
+        NSLog(@"ROM file: %@", files[0]);
     }
 }
 
