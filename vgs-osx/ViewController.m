@@ -61,6 +61,39 @@ int vgsint_init(const char *bin);
                                                       self.bg.frame = self.view.window.contentView.frame;
                                                       self.vram.frame = [self calcVramRect];
                                                   }];
+
+    // TODO: 現状常に起動時にROMファイル選択ダイアログを起動する（将来的にはランチャ対応+組み込み対応を検討）
+    [self startLoadRomDialog];
+}
+
+- (void)startLoadRomDialog
+{
+    int i; // Loop counter.
+    
+    // Create the File Open Dialog class.
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    
+    // Enable the selection of files in the dialog.
+    [openDlg setCanChooseFiles:YES];
+    
+    // Enable the selection of directories in the dialog.
+    [openDlg setCanChooseDirectories:YES];
+    
+    // Display the dialog.  If the OK button was pressed,
+    // process the files.
+    if ( [openDlg runModalForDirectory:nil file:nil] == NSOKButton )
+    {
+        // Get an array containing the full filenames of all
+        // files and directories selected.
+        NSArray* files = [openDlg filenames];
+        
+        // Loop through all the files and process them.
+        for( i = 0; i < [files count]; i++ )
+        {
+            NSString* fileName = [files objectAtIndex:i];
+            // TODO: open rom file
+        }
+    }
 }
 
 - (NSRect)calcVramRect
